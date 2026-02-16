@@ -2,118 +2,484 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дебетовые карты</title>
+    <title>Микрозаймы онлайн — сравнение лучших предложений 2026</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/galaxies/spiral/Hubble_NGC1309_potw2530a.jpg?w=4637&h=4590&fit=clip&crop=faces%2Cfocalpoint') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
+        :root {
+            --main-blue: #1a73e8;
+            --dark-blue: #0d47a1;
+            --green: #2ecc71;
+            --text-dark: #2c3e50;
+            --gray-bg: #f8f9fa;
         }
-        .container {
-            width: 80%;
-            max-width: 600px;
-            position: relative;
-            z-index: 1;
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background-color: var(--gray-bg); 
+            margin: 0; 
+            color: var(--text-dark);
+            line-height: 1.6;
         }
-        h1 {
-            text-align: center;
-            font-size: 2em;
+        header { 
+            background: white; 
+            padding: 15px 0; 
+            border-bottom: 1px solid #e0e0e0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 0 15px; 
+        }
+        .header-flex { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: var(--main-blue); 
+            text-decoration: none;
+            display: inline-block;
+        }
+        .logo span { color: var(--green); }
+        
+        .hero { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 0; 
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+        }
+        .hero h1 { 
+            margin: 0 0 15px; 
+            font-size: 32px; 
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        .hero p { 
+            margin: 0; 
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .filters { 
+            display: flex; 
+            gap: 10px; 
+            overflow-x: auto; 
+            padding: 15px 0;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
-        .card-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
+        .filters::-webkit-scrollbar { display: none; }
+        .filter-btn { 
+            background: white; 
+            border: 2px solid #ddd; 
+            padding: 10px 20px; 
+            border-radius: 25px; 
+            cursor: pointer; 
+            white-space: nowrap; 
+            font-size: 14px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        .filter-btn:hover { 
+            border-color: var(--main-blue);
+            color: var(--main-blue);
+        }
+        .filter-btn.active { 
+            background: var(--main-blue); 
+            color: white; 
+            border-color: var(--main-blue);
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+        }
+
+        .offer-card { 
+            background: white; 
+            border-radius: 16px; 
+            padding: 25px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex; 
+            flex-wrap: wrap; 
             align-items: center;
+            gap: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .card {
-            margin-bottom: 10px;
-            padding: 15px 30px;
-            border-radius: 50px;
+        .offer-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .mfo-brand { 
+            flex: 1; 
+            min-width: 200px; 
+        }
+      .mfo-logo {
+    width: 140px;
+    height: auto;
+    min-height: 60px;
+    font-size: 13px;
+    padding: 8px 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word;
+    line-height: 1.1;
+}
+        /* Цвета логотипов под разные бренды */
+        .logo-like { background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%); color: white; }
+        .logo-dom { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; }
+        .logo-kapusta { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); color: white; }
+        .logo-smart { background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%); color: white; }
+        
+        .rating { 
+            color: #f1c40f; 
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .rating-text {
+            color: #7f8c8d;
+            font-size: 13px;
+            margin-left: 5px;
+        }
+        
+        .mfo-params { 
+            flex: 2; 
+            display: flex; 
+            gap: 30px; 
+            min-width: 300px;
+            padding: 15px 0;
+        }
+        .param { 
+            font-size: 14px; 
+            color: #7f8c8d;
             text-align: center;
-            font-size: 1.2em;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            flex: 1;
+        }
+        .param strong { 
+            display: block; 
+            font-size: 18px; 
+            color: var(--text-dark); 
+            margin-top: 5px;
+            font-weight: 700;
+        }
+
+        .mfo-action { 
+            flex: 1; 
+            text-align: right; 
+            min-width: 180px; 
+        }
+        .btn-apply { 
+            background: linear-gradient(135deg, var(--green) 0%, #27ae60 100%); 
+            color: white; 
+            text-decoration: none; 
+            padding: 15px 30px; 
+            border-radius: 10px; 
+            font-weight: bold; 
+            display: inline-block; 
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+            border: none;
             cursor: pointer;
-            transition: transform 0.2s;
-            width: 80%;
-            box-sizing: border-box;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background-size: cover;
-            position: relative;
-            overflow: hidden;
-            display: block; /* Ensure the entire area is clickable */
+            font-size: 16px;
         }
-        .card::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 0;
+        .btn-apply:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
         }
-        .card > * {
-            position: relative;
-            z-index: 1;
+        .probability { 
+            font-size: 12px; 
+            color: #27ae60; 
+            margin-top: 10px;
+            font-weight: 600;
         }
-        .card:hover {
-            transform: scale(1.05);
+
+        .trust-block { 
+            margin-top: 50px; 
+            padding: 30px; 
+            background: white; 
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        .card.tinkoff { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/galaxies/spiral/Hubble_NGC1300_potw2349a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.vtb { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/galaxies/irregular/Hubble_NGC6822_potw2335a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.sberbank { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/galaxies/elliptical/Hubble_NGC4889_potw2341a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.alfabank { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/nebulae/planetary/Hubble_NGC_6302_potw2308a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.gazprombank { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/nebulae/emission/Hubble_NGC_604_potw2320a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.rosbank { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/galaxies/irregular/Hubble_LMC_N11B_potw2317a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.mtsbank { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/galaxies/spiral/Hubble_NGC7331_potw2323a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.gazprombank-alt { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/nebulae/reflection/Hubble_NGC_1977_potw2311a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.sovcombank { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/nebulae/dark/Hubble_Barnard_86_potw2306a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.otpbank { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/galaxies/elliptical/Hubble_NGC_4552_potw2327a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        .card.promsvyazbank { background: url('https://assets.science.nasa.gov/dynamicimage/assets/science/missions/hubble/nebulae/emission/Hubble_NGC_2080_potw2314a.jpg?w=3961&h=4048&fit=clip&crop=faces%2Cfocalpoint') no-repeat center; }
-        /* Specific styling for links */
-        .card a {
-            color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
-            text-decoration: none; /* Remove underline */
-            display: block; /* Fill the card area */
-            width: 100%;
-            height: 100%;
+        .trust-block h3 {
+            margin-top: 0;
+            font-size: 24px;
+            color: var(--text-dark);
         }
-        .card a:hover {
-            color: rgba(255, 255, 255, 0.9); /* Slightly brighter on hover */
+        .trust-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 25px; 
+            margin-top: 20px; 
+        }
+        .trust-item { 
+            font-size: 15px; 
+            color: #7f8c8d;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid var(--main-blue);
+        }
+        .trust-item strong { 
+            color: var(--text-dark); 
+            display: block; 
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        footer { 
+            background: #2c3e50; 
+            color: #ecf0f1;
+            padding: 40px 0; 
+            margin-top: 60px; 
+            font-size: 13px;
+            line-height: 1.8;
+        }
+        footer p { margin: 10px 0; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 24px; }
+            .offer-card { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 20px;
+            }
+            .mfo-params { 
+                flex-direction: column;
+                width: 100%; 
+                gap: 10px;
+            }
+            .param { width: 100%; }
+            .mfo-action { 
+                width: 100%; 
+                text-align: center;
+            }
+            .btn-apply { 
+                width: 100%; 
+                box-sizing: border-box;
+            }
+            .trust-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Дебетовые и кредитные карты</h1>
-        <ul class="card-list">
-            <li class="card tinkoff"><a href="https://trk.ppdu.ru/click/V4UKBnDA?erid=Kra23oUWc target="_blank">Т-Банк 14+<br><span style="font-size: 0.8em;">Дебетовая карта</span></a></li>
-            <li class="card vtb"><a href="https://trk.ppdu.ru/click/6yhLfF30?erid=2SDnjcUMV2g")">ВТБ 18+<br><span style="font-size: 0.8em;">Платёжный стикер</span></a></li>
-            <li class="card sberbank"><a href="https://trk.ppdu.ru/click/tme838K7?erid=2SDnje8KVjs" target="_blank">Сбербанк 18+<br><span style="font-size: 0.8em;">Кредитная карта</span></a></li>
-            <li class="card alfabank"><a href="https://www.tbank.ru/baf/14jMlVP0i3g" target="_blank">Т-Банк 18+<br><span style="font-size: 0.8em;">Кредитная карта</span></a></li>
-            <li class="card gazprombank"><a href="" target="_blank">Ак Барс 18+<br><span style="font-size: 0.8em;">Дебетовая карта(скоро)</span></a></li>
-            <li class="card rosbank"><a href="https://trk.ppdu.ru/click/kgl0hdBb?erid=2SDnje1Rojj" target="_blank">МТС Деньги 18+<br><span style="font-size: 0.8em;">Дебетовая карта</span></a></li>
-            <li class="card mtsbank"><a href="https://trk.ppdu.ru/click/KAipwU5f?erid=2SDnjehD1C8" target="_blank">Банк ПСБ 18+<br><span style="font-size: 0.8em;">Дебетовая карта</span></a></li>
-            <li class="card gazprombank-alt"><a href="https://trk.ppdu.ru/click/zSlIZi3k?erid=2SDnjdU9bbN" target="_blank">УБРиР<br><span style="font-size: 0.8em;">Дебетовая карта My Life</span></a></li>
-            <li class="card sovcombank"><a href="https://pxl.leads.su/click/da0f2620fa44ce9baa8347308faf3a2e?erid=2W5zFGRdz7a" target="_blank">ЗенитБанк<br><span style="font-size: 0.8em;">Кредитная карта 21+</span></a></li>
-            <li class="card otpbank"><a href="https://pxl.leads.su/click/aeab76464d19420f44ab743a1d760b41?erid=get_it_soon" target="_blank">Pari 18+<br><span style="font-size: 0.8em;">Букмекерская контора</span></a></li>
-            <li class="card promsvyazbank"><a href="https://trk.ppdu.ru/click/coKG8Jec?erid=2SDnjcYvm8c" target="_blank">Кредит Европа Банк 18+ <br><span style="font-size: 0.8em;">Дебетовая карта CARD PLUS Мир</span></a></li>
-			 <li class="card promsvyazbank"><a href="https://trk.ppdu.ru/click/tNumjlrh?erid=Kra23nkSR" target="_blank">Фора-Банк 18+ <br><span style="font-size: 0.8em;">Дебетовая карта с повышенным кешбэком МИР</span></a></li>
-        </ul>
+
+<header>
+    <div class="container header-flex">
+        <a href="#" class="logo">БАНКИГУРУ<span>24</span></a>
+        <div style="font-size: 14px; color: #666; font-weight: 500;">🕐 Работаем 24/7</div>
     </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Срочные займы на карту </h1>
+        <p>Сравнили предложения из реестра ЦБ РФ. Одобрение за 5 минут.</p>
+    </div>
+</section>
+
+<main class="container">
+    <div class="filters">
+        <button class="filter-btn active">Все займы</button>
+    </div>
+
+    <!-- Оффер 1: ЛайкЗайм -->
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo logo-like">ЛайкЗайм</div>
+            <div class="rating">★★★★★ <span class="rating-text">4.8 (Высокий рейтинг)</span></div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>до 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>до 16 дней</strong></div>
+            <div class="param">Ставка<strong>0% (Акция)</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="#" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Решение за 10 мин</div>
+        </div>
+    </article>
+
+    <!-- Оффер 2: Деньги на дом -->
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo logo-dom">Деньги на дом</div>
+            <div class="rating">★★★★☆ <span class="rating-text">4.6 (Надежно)</span></div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>до 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>до 52 недель</strong></div>
+            <div class="param">Ставка<strong>от 0.8%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="#" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Мгновенно на карту</div>
+        </div>
+    </article>
+
+    <!-- Оффер 3: еКапуста -->
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo logo-kapusta">еКапуста</div>
+            <div class="rating">★★★★★ <span class="rating-text">4.9 (Лидер рынка)</span></div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>до 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>до 21 дня</strong></div>
+            <div class="param">Ставка<strong>0% (Новым)</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="#" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Мгновенно на карту</div>
+        </div>
+    </article>
+
+    <!-- Оффер 4: Умные Наличные -->
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo logo-smart">Умные Наличные</div>
+            <div class="rating">★★★★☆ <span class="rating-text">4.5</span></div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>до 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>до 30 дней</strong></div>
+            <div class="param">Ставка<strong>0.8% в день</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="#" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Работаем с 9 до 21</div>
+        </div>
+    </article>
+    <!-- Оффер 5: МикроЗайм -->
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo" style="background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%); color: white;">МикроЗайм</div>
+            <div class="rating">★★★★☆ <span class="rating-text">4.5</span></div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>5 000 - 50 000 ₽</strong></div>
+            <div class="param">Срок<strong>30 - 168 дней</strong></div>
+            <div class="param">Ставка<strong>0-0,8%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="#" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Без выходных</div>
+        </div>
+    </article>
+
+    <!-- Оффер 6: Займер -->
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;">ЗАЙМЕР</div>
+            <div class="rating">★★★★★ <span class="rating-text">4.9</span></div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>до 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>до 180 дней</strong></div>
+            <div class="param">Ставка<strong>0,65%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="#" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ За 5 минут онлайн</div>
+        </div>
+    </article>
+
+    <!-- Оффер 7: ФИНМОЛЛ -->
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo" style="background: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%); color: white;">ФИНМОЛЛ</div>
+            <div class="rating">★★★★☆ <span class="rating-text">4.4</span></div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>35 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>до 53 недель</strong></div>
+            <div class="param">Ставка<strong>от 178%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="#" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Выезд на дом</div>
+        </div>
+    </article>
+
+    <!-- Оффер 8: Max.credit -->
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">Max.credit</div>
+            <div class="rating">★★★★☆ <span class="rating-text">4.3</span></div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>5 - 30 дней</strong></div>
+            <div class="param">Ставка<strong>0,8%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="#" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Первый до 7 000 ₽</div>
+        </div>
+    </article>
+
+    <!-- Оффер 9: Срочноденьги -->
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">СрочноДеньги</div>
+            <div class="rating">★★★★★ <span class="rating-text">4.7</span></div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>2 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>1 - 30 дней</strong></div>
+            <div class="param">Ставка<strong>0% (первый)</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="#" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Решение за 1 минуту</div>
+        </div>
+    </article>
+    <section class="trust-block">
+        <h3>Почему выбирают нас?</h3>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <strong>🔒 Безопасность</strong>
+                Работаем только с МФО, имеющими лицензию Центрального Банка РФ.
+            </div>
+            <div class="trust-item">
+                <strong>⚡ Скорость</strong>
+                Деньги поступают на карту в среднем за 7 минут после одобрения.
+            </div>
+            <div class="trust-item">
+                <strong>✓ Честность</strong>
+                Никаких скрытых страховок и платных подписок. Полная прозрачность.
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p><strong>Информация:</strong> Сайт является агрегатором финансовых предложений. Мы не выдаем займы самостоятельно. Информация о ставках и условиях актуальна на 2026 год.</p>
+        <p><strong>Внимание!</strong> Микрофинансовые организации (МФО) осуществляют деятельность по выдаче займов на основании Федерального закона №151-ФЗ. Типичные условия: ставка от 0% до 0.8% в день, ПСК от 0% до 292% годовых.</p>
+        <p style="margin-top: 20px; opacity: 0.8;">© 2026 БАНКИГУРУ24 — Все права защищены</p>
+    </div>
+</footer>
+
+<script>
+    // Простая интерактивность для кнопок фильтров
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
 </body>
 </html>
-
-
