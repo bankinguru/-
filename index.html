@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<link rel="icon" type="image/jpeg" href="favicon.png">
-	
+    <link rel="icon" type="image/jpeg" href="favicon.png">
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Микрозаймы онлайн — сравнение лучших предложений 2026</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --main-blue: #1a73e8;
@@ -33,245 +32,60 @@
             z-index: 100;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .container { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            padding: 0 15px; 
-        }
-        .header-flex { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-        .logo { 
-            font-size: 24px; 
-            font-weight: bold; 
-            color: var(--main-blue); 
-            text-decoration: none;
-            display: inline-block;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 15px; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: bold; color: var(--main-blue); text-decoration: none; display: inline-block;}
         .logo span { color: var(--green); }
         
         .hero { 
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 0; 
-            margin-bottom: 30px;
-            border-radius: 0 0 20px 20px;
+            color: white; padding: 40px 0; margin-bottom: 30px; border-radius: 0 0 20px 20px;
         }
-        .hero h1 { 
-            margin: 0 0 15px; 
-            font-size: 32px; 
-            line-height: 1.2;
-            font-weight: 700;
-        }
-        .hero p { 
-            margin: 0; 
-            font-size: 16px;
-            opacity: 0.95;
-        }
+        .hero h1 { margin: 0 0 15px; font-size: 32px; line-height: 1.2; font-weight: 700; }
+        .hero p { margin: 0; font-size: 16px; opacity: 0.95; }
 
-        .filters { 
-            display: flex; 
-            gap: 10px; 
-            overflow-x: auto; 
-            padding: 15px 0;
-            margin-bottom: 20px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+        .nav-buttons { display: flex; gap: 10px; margin: 20px 0; overflow-x: auto; padding-bottom: 5px; }
+        .nav-btn { 
+            display: inline-block; padding: 10px 24px; border-radius: 50px; text-decoration: none; 
+            font-weight: 600; font-size: 14px; white-space: nowrap; transition: 0.3s; background-color: #e9ecef; color: #495057;
         }
-        .filters::-webkit-scrollbar { display: none; }
-        .filter-btn { 
-            background: white; 
-            border: 2px solid #ddd; 
-            padding: 10px 20px; 
-            border-radius: 25px; 
-            cursor: pointer; 
-            white-space: nowrap; 
-            font-size: 14px;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        .filter-btn:hover { 
-            border-color: var(--main-blue);
-            color: var(--main-blue);
-        }
-        .filter-btn.active { 
-            background: var(--main-blue); 
-            color: white; 
-            border-color: var(--main-blue);
-            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
-        }
+        .nav-btn.active { background-color: #007bff; color: white; box-shadow: 0 4px 12px rgba(0,123,255,0.2); }
 
         .offer-card { 
-            background: white; 
-            border-radius: 16px; 
-            padding: 25px; 
-            margin-bottom: 20px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            display: flex; 
-            flex-wrap: wrap; 
-            align-items: center;
-            gap: 20px;
+            background: white; border-radius: 16px; padding: 25px; margin-bottom: 20px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .offer-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        .offer-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .mfo-brand { flex: 1; min-width: 200px; }
+        .mfo-logo {
+            width: 140px; height: auto; min-height: 60px; font-size: 13px; padding: 8px 5px; text-align: center;
+            display: flex; align-items: center; justify-content: center; word-break: break-word; line-height: 1.1;
+            background: #fff; border: 1px solid #eee; border-radius: 8px;
         }
-        .mfo-brand { 
-            flex: 1; 
-            min-width: 200px; 
-        }
-      .mfo-logo {
-    width: 140px;
-    height: auto;
-    min-height: 60px;
-    font-size: 13px;
-    padding: 8px 5px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    word-break: break-word;
-    line-height: 1.1;
-}
-        /* Цвета логотипов под разные бренды */
-        .logo-like { background: linear-gradient(135deg, #ff9966 0%, #ff5e62 100%); color: white; }
-        .logo-dom { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; }
-        .logo-kapusta { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); color: white; }
-        .logo-smart { background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%); color: white; }
+        .rating { color: #f1c40f; font-size: 15px; font-weight: 500; margin-top: 5px; }
         
-        .rating { 
-            color: #f1c40f; 
-            font-size: 15px;
-            font-weight: 500;
-        }
-        .rating-text {
-            color: #7f8c8d;
-            font-size: 13px;
-            margin-left: 5px;
-        }
-        
-        .mfo-params { 
-            flex: 2; 
-            display: flex; 
-            gap: 30px; 
-            min-width: 300px;
-            padding: 15px 0;
-        }
-        .param { 
-            font-size: 14px; 
-            color: #7f8c8d;
-            text-align: center;
-            padding: 10px 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            flex: 1;
-        }
-        .param strong { 
-            display: block; 
-            font-size: 18px; 
-            color: var(--text-dark); 
-            margin-top: 5px;
-            font-weight: 700;
-        }
+        .mfo-params { flex: 2; display: flex; gap: 30px; min-width: 300px; padding: 15px 0; }
+        .param { font-size: 12px; color: #7f8c8d; text-align: center; padding: 10px 15px; background: #f8f9fa; border-radius: 10px; flex: 1; }
+        .param strong { display: block; font-size: 16px; color: var(--text-dark); margin-top: 5px; font-weight: 700; }
 
-        .mfo-action { 
-            flex: 1; 
-            text-align: right; 
-            min-width: 180px; 
-        }
+        .mfo-action { flex: 1; text-align: right; min-width: 180px; }
         .btn-apply { 
-            background: linear-gradient(135deg, var(--green) 0%, #27ae60 100%); 
-            color: white; 
-            text-decoration: none; 
-            padding: 15px 30px; 
-            border-radius: 10px; 
-            font-weight: bold; 
-            display: inline-block; 
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
+            background: linear-gradient(135deg, var(--green) 0%, #27ae60 100%); color: white; text-decoration: none; 
+            padding: 15px 30px; border-radius: 10px; font-weight: bold; display: inline-block; transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3); border: none; cursor: pointer; font-size: 16px; width: 100%; text-align: center;
         }
-        .btn-apply:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
-        }
-        .probability { 
-            font-size: 12px; 
-            color: #27ae60; 
-            margin-top: 10px;
-            font-weight: 600;
-        }
+        .btn-apply:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4); }
+        .probability { font-size: 12px; color: #27ae60; margin-top: 10px; font-weight: 600; text-align: center; }
 
-        .trust-block { 
-            margin-top: 50px; 
-            padding: 30px; 
-            background: white; 
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .trust-block h3 {
-            margin-top: 0;
-            font-size: 24px;
-            color: var(--text-dark);
-        }
-        .trust-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 25px; 
-            margin-top: 20px; 
-        }
-        .trust-item { 
-            font-size: 15px; 
-            color: #7f8c8d;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            border-left: 4px solid var(--main-blue);
-        }
-        .trust-item strong { 
-            color: var(--text-dark); 
-            display: block; 
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-
-        footer { 
-            background: #2c3e50; 
-            color: #ecf0f1;
-            padding: 40px 0; 
-            margin-top: 60px; 
-            font-size: 13px;
-            line-height: 1.8;
-        }
-        footer p { margin: 10px 0; }
+        footer { background: #2c3e50; color: #ecf0f1; padding: 40px 0; margin-top: 60px; font-size: 13px; line-height: 1.8; }
         
         @media (max-width: 768px) {
             .hero h1 { font-size: 24px; }
-            .offer-card { 
-                flex-direction: column; 
-                text-align: center; 
-                padding: 20px;
-            }
-            .mfo-params { 
-                flex-direction: column;
-                width: 100%; 
-                gap: 10px;
-            }
+            .offer-card { flex-direction: column; text-align: center; padding: 20px; }
+            .mfo-params { flex-direction: column; width: 100%; gap: 10px; }
             .param { width: 100%; }
-            .mfo-action { 
-                width: 100%; 
-                text-align: center;
-            }
-            .btn-apply { 
-                width: 100%; 
-                box-sizing: border-box;
-            }
-            .trust-grid { grid-template-columns: 1fr; }
+            .mfo-action { width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -286,249 +100,541 @@
 
 <section class="hero">
     <div class="container">
-        <h1>Срочные займы на карту </h1>
+        <h1>Срочные займы на карту</h1>
         <p>Сравнили предложения из реестра ЦБ РФ. Одобрение за 5 минут.</p>
     </div>
 </section>
 
 <main class="container">
 
-<nav class="nav-buttons" style="display: flex; gap: 10px; margin: 20px 0; overflow-x: auto; padding-bottom: 5px;">
-    <a href="index.html" class="nav-btn active" style="display: inline-block; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap; transition: 0.3s; background-color: #007bff; color: white; box-shadow: 0 4px 12px rgba(0,123,255,0.2);">
-        <i class="fa-solid fa-wallet"></i> Все займы
-    </a>
-    <a href="debit.html" class="nav-btn" style="display: inline-block; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap; transition: 0.3s; background-color: #e9ecef; color: #495057;">
-        <i class="fa-solid fa-credit-card"></i> Дебетовые карты
-    </a>
-    <a href="credit.html" class="nav-btn" style="display: inline-block; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap; transition: 0.3s; background-color: #e9ecef; color: #495057;">
-        <i class="fa-solid fa-percent"></i> Кредитные карты
-    </a>
+    <nav class="nav-buttons">
+        <a href="index.html" class="nav-btn active"><i class="fa-solid fa-wallet"></i> Все займы</a>
+        <a href="debit.html" class="nav-btn"><i class="fa-solid fa-credit-card"></i> Дебетовые карты</a>
+        <a href="credit.html" class="nav-btn"><i class="fa-solid fa-percent"></i> Кредитные карты</a>
+    </nav>
 
-</nav>
-    
-
-</div>
-
-<article class="offer-card">
-    <div class="mfo-brand">
-        <div class="mfo-logo" style="background: linear-gradient(135deg, #ff5e62, #ff9966); color: white; display: flex; align-items: center; justify-content: center; border-radius: 8px; height: 45px; font-weight: bold; text-transform: uppercase;">
-            Лайк Займ
-        </div>
-        <div class="rating">★★★★★ <span class="rating-text">4.8</span></div>
-    </div>
-    <div class="mfo-params">
-        <div class="param">Сумма<strong>до 30 000 ₽</strong></div>
-        <div class="param">Срок<strong>до 16 дней</strong></div>
-        <div class="param">Ставка<strong>0% (Акция)</strong></div>
-    </div>
-    <div class="mfo-action">
-        <a href="#" class="btn-apply">Получить деньги</a>
-        <div class="probability">✓ Решение за 10 мин</div>
-    </div>
-</article>
-
-<article class="offer-card">
-    <div class="mfo-brand">
-        <div class="mfo-logo" style="background: #fff; border: 1px solid #eee; display: flex; align-items: center; padding: 5px 10px; border-radius: 8px; height: 45px;">
-            <img src="https://www.google.com/s2/favicons?domain=dengi-na-dom.ru&sz=64" alt="Деньги на дом" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.style.display='none'">
-            <span style="color: #11998e; font-weight: bold; font-size: 13px; text-transform: uppercase;">Деньги на дом</span>
-        </div>
-        <div class="rating">★★★★☆ <span class="rating-text">4.6</span></div>
-    </div>
-    <div class="mfo-params">
-        <div class="param">Сумма<strong>до 100 000 ₽</strong></div>
-        <div class="param">Срок<strong>до 52 недель</strong></div>
-        <div class="param">Ставка<strong>от 0.8%</strong></div>
-    </div>
-    <div class="mfo-action">
-        <a href="#" class="btn-apply">Получить деньги</a>
-        <div class="probability">✓ Мгновенно на карту</div>
-    </div>
-</article>
-
-<article class="offer-card">
-    <div class="mfo-brand">
-        <div class="mfo-logo" style="background: #fff; border: 1px solid #eee; display: flex; align-items: center; padding: 5px 10px; border-radius: 8px;">
-            <img src="https://www.google.com/s2/favicons?domain=ekapusta.com&sz=64" alt="еКапуста" style="width: 24px; height: 24px; margin-right: 8px;">
-            <span style="color: #f7971e; font-weight: bold; font-size: 14px; text-transform: uppercase;">еКапуста</span>
-        </div>
-        <div class="rating">★★★★★ <span class="rating-text">4.9</span></div>
-    </div>
-    <div class="mfo-params">
-        <div class="param">Сумма<strong>до 30 000 ₽</strong></div>
-        <div class="param">Срок<strong>до 21 дня</strong></div>
-        <div class="param">Ставка<strong>0% (Новым)</strong></div>
-    </div>
-    <div class="mfo-action">
-        <a href="#" class="btn-apply">Получить деньги</a>
-        <div class="probability">✓ Мгновенно на карту</div>
-    </div>
-</article>
-
-<article class="offer-card">
-    <div class="mfo-brand">
-        <div class="mfo-logo" style="background: #fff; border: 1px solid #eee; display: flex; align-items: center; padding: 5px 10px; border-radius: 8px;">
-            <img src="https://www.google.com/s2/favicons?domain=smartcash.ru&sz=64" alt="Умные Наличные" style="width: 24px; height: 24px; margin-right: 8px;">
-            <span style="color: #2193b0; font-weight: bold; font-size: 13px; text-transform: uppercase;">Умные Наличные</span>
-        </div>
-        <div class="rating">★★★★☆ <span class="rating-text">4.5</span></div>
-    </div>
-    <div class="mfo-params">
-        <div class="param">Сумма<strong>до 30 000 ₽</strong></div>
-        <div class="param">Срок<strong>до 30 дней</strong></div>
-        <div class="param">Ставка<strong>0.8% в день</strong></div>
-    </div>
-    <div class="mfo-action">
-        <a href="#" class="btn-apply">Получить деньги</a>
-        <div class="probability">✓ С 9:00 до 21:00</div>
-    </div>
-</article>
-
-<article class="offer-card">
-    <div class="mfo-brand">
-        <div class="mfo-logo" style="background: #fff; border: 1px solid #eee; display: flex; align-items: center; padding: 5px 10px; border-radius: 8px;">
-            <img src="https://www.google.com/s2/favicons?domain=webbankir.com&sz=64" alt="Webbankir" style="width: 24px; height: 24px; margin-right: 8px;">
-            <span style="color: #182848; font-weight: bold; font-size: 14px; text-transform: uppercase;">Webbankir</span>
-        </div>
-        <div class="rating">★★★★☆ <span class="rating-text">4.5</span></div>
-    </div>
-    <div class="mfo-params">
-        <div class="param">Сумма<strong>до 50 000 ₽</strong></div>
-        <div class="param">Срок<strong>до 168 дней</strong></div>
-        <div class="param">Ставка<strong>0-0.8%</strong></div>
-    </div>
-    <div class="mfo-action">
-        <a href="#" class="btn-apply">Получить деньги</a>
-        <div class="probability">✓ Без выходных</div>
-    </div>
-</article>
-
-<article class="offer-card">
-    <div class="mfo-brand">
-        <div class="mfo-logo" style="background: #fff; border: 1px solid #eee; display: flex; align-items: center; padding: 5px 10px; border-radius: 8px;">
-            <img src="https://www.google.com/s2/favicons?domain=zaymer.ru&sz=64" alt="Займер" style="width: 24px; height: 24px; margin-right: 8px;">
-            <span style="color: #ff6600; font-weight: bold; font-size: 14px; text-transform: uppercase;">ЗАЙМЕР</span>
-        </div>
-        <div class="rating">★★★★★ <span class="rating-text">4.9</span></div>
-    </div>
-    <div class="mfo-params">
-        <div class="param">Сумма<strong>до 100 000 ₽</strong></div>
-        <div class="param">Срок<strong>до 180 дней</strong></div>
-        <div class="param">Ставка<strong>0.65%</strong></div>
-    </div>
-    <div class="mfo-action">
-        <a href="#" class="btn-apply">Получить деньги</a>
-        <div class="probability">✓ 5 мин. онлайн</div>
-    </div>
-</article>
-
-<article class="offer-card">
-    <div class="mfo-brand">
-        <div class="mfo-logo" style="background: #fff; border: 1px solid #eee; display: flex; align-items: center; padding: 5px 10px; border-radius: 8px;">
-            <img src="https://www.google.com/s2/favicons?domain=finmoll.com&sz=64" alt="ФИНМОЛЛ" style="width: 24px; height: 24px; margin-right: 8px;">
-            <span style="color: #cb2d3e; font-weight: bold; font-size: 14px; text-transform: uppercase;">ФИНМОЛЛ</span>
-        </div>
-        <div class="rating">★★★★☆ <span class="rating-text">4.4</span></div>
-    </div>
-    <div class="mfo-params">
-        <div class="param">Сумма<strong>до 100 000 ₽</strong></div>
-        <div class="param">Срок<strong>до 53 недель</strong></div>
-        <div class="param">Ставка<strong>от 0.8%</strong></div>
-    </div>
-    <div class="mfo-action">
-        <a href="#" class="btn-apply">Получить деньги</a>
-        <div class="probability">✓ Выезд на дом</div>
-    </div>
-</article>
-
-<article class="offer-card">
-    <div class="mfo-brand">
-        <div class="mfo-logo" style="background: #fff; border: 1px solid #eee; display: flex; align-items: center; padding: 5px 10px; border-radius: 8px;">
-            <img src="https://www.google.com/s2/favicons?domain=max.credit&sz=64" alt="Max.credit" style="width: 24px; height: 24px; margin-right: 8px;">
-            <span style="color: #667eea; font-weight: bold; font-size: 14px; text-transform: uppercase;">Max.credit</span>
-        </div>
-        <div class="rating">★★★★☆ <span class="rating-text">4.3</span></div>
-    </div>
-    <div class="mfo-params">
-        <div class="param">Сумма<strong>до 30 000 ₽</strong></div>
-        <div class="param">Срок<strong>до 30 дней</strong></div>
-        <div class="param">Ставка<strong>0.8%</strong></div>
-    </div>
-    <div class="mfo-action">
-        <a href="#" class="btn-apply">Получить деньги</a>
-        <div class="probability">✓ Решение мгновенно</div>
-    </div>
-</article>
-
-<article class="offer-card">
-    <div class="mfo-brand">
-        <div class="mfo-logo" style="background: #fff; border: 1px solid #eee; display: flex; align-items: center; padding: 5px 10px; border-radius: 8px;">
-            <img src="https://www.google.com/s2/favicons?domain=srochnodengi.ru&sz=64" alt="СрочноДеньги" style="width: 24px; height: 24px; margin-right: 8px;">
-            <span style="color: #f5576c; font-weight: bold; font-size: 10px; text-transform: uppercase;">СрочноДеньги</span>
-        </div>
-        <div class="rating">★★★★★ <span class="rating-text">4.7</span></div>
-    </div>
-    <div class="mfo-params">
-        <div class="param">Сумма<strong>до 30 000 ₽</strong></div>
-        <div class="param">Срок<strong>до 30 дней</strong></div>
-        <div class="param">Ставка<strong>0% (Новым)</strong></div>
-    </div>
-    <div class="mfo-action">
-        <a href="#" class="btn-apply">Получить деньги</a>
-        <div class="probability">✓ За 1 минуту</div>
-    </div>
-</article>
-
-<section class="container" style="margin-top: 40px; margin-bottom: 50px;">
-    <h2 style="margin-bottom: 25px; color: var(--text-dark); font-size: 22px; font-weight: 700; text-align: left;">Почему нам доверяют?</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: flex-start;">
-        
-        <div style="flex: 1; min-width: 280px; background: white; padding: 25px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #eee; text-align: left;">
-            <div style="font-size: 24px; margin-bottom: 12px; color: var(--main-blue);">
-                <i class="fa-solid fa-building-columns"></i>
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/ekapusta.com" alt="еКапуста" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=EK&background=f7971e&color=fff'">
+                <span style="color: #f7971e; font-weight: bold;">еКапуста</span>
             </div>
-            <strong style="display: block; margin-bottom: 8px; font-size: 17px; color: var(--text-dark);">Только с лицензией</strong>
-            <p style="font-size: 14px; color: #7f8c8d; margin: 0; line-height: 1.5;">Работаем только с организациями, имеющими лицензию Центрального Банка РФ.</p>
+            <div class="rating">★★★★★ 4.9</div>
         </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>до 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>от 7 до 21 дня</strong></div>
+            <div class="param">Ставка<strong>от 0 до 0,8%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/2f06d202bb5c5de5eb19c2deb54ed1f0?erid=2W5zFJtJ1eg" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ от 18 лет</div>
+        </div>
+    </article>
 
-        <div style="flex: 1; min-width: 280px; background: white; padding: 25px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #eee; text-align: left;">
-            <div style="font-size: 24px; margin-bottom: 12px; color: var(--green);">
-                <i class="fa-solid fa-stopwatch"></i>
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://logo.s3lds.ru/offers/10042/logo/" alt="Небус" style="width: 90px; height: 36px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=NB&background=3498db&color=fff'">
+                
             </div>
-            <strong style="display: block; margin-bottom: 8px; font-size: 17px; color: var(--text-dark);">Выплата за 7 минут</strong>
-            <p style="font-size: 14px; color: #7f8c8d; margin: 0; line-height: 1.5;">Деньги поступают на карту практически мгновенно сразу после одобрения заявки.</p>
+            <div class="rating">★★★★★ 4.8</div>
         </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>7 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>7 - 365 дней</strong></div>
+            <div class="param">Ставка<strong>от 0,48% до 0,8%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/5176185cf17a18f2d256e4c1ee5a81fb?erid=2W5zFHeaT9J" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ ПСК до 292%</div>
+        </div>
+    </article>
 
-        <div style="flex: 1; min-width: 280px; background: white; padding: 25px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #eee; text-align: left;">
-            <div style="font-size: 24px; margin-bottom: 12px; color: #f39c12;">
-                <i class="fa-solid fa-handshake"></i>
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/joy.money" alt="Joy.Money" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=JM&background=e74c3c&color=fff'">
+                <span style="color: #e74c3c; font-weight: bold;">Joy.Money</span>
             </div>
-            <strong style="display: block; margin-bottom: 8px; font-size: 17px; color: var(--text-dark);">Без скрытых услуг</strong>
-            <p style="font-size: 14px; color: #7f8c8d; margin: 0; line-height: 1.5;">Никаких платных страховок и скрытых подписок. Вы видите условия сразу.</p>
+            <div class="rating">★★★★★ 4.9</div>
         </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>10 - 168 дней</strong></div>
+            <div class="param">Ставка<strong>первый под 0%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/64755f1e75568bab415998e5a88771c4?erid=2W5zFK1Gnqv" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ 0% до 21 дня</div>
+        </div>
+    </article>
 
-    </div>
-</section>
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/bunnymoney.ru" alt="BunnyMoney" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=BM&background=ff6b9d&color=fff'">
+                <span style="color: #ff6b9d; font-weight: bold;">BunnyMoney</span>
+            </div>
+            <div class="rating">★★★★☆ 4.5</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>1 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>3 - 30 дней</strong></div>
+            <div class="param">Ставка<strong>от 0 до 0,8%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/b935c65feca0d8855433a294d526f027?erid=2W5zFHc6Gbz" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ от 23 до 56 лет</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://logo.s3lds.ru/offers/11546/logo/" alt="Кекас" style="width: 90px; height: 40px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=KK&background=e74c3c&color=fff'">
+                
+            </div>
+            <div class="rating">★★★★★ 4.8</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>1 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>3 - 30 дней</strong></div>
+            <div class="param">Ставка<strong>Первые 3 бесплатно</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/ec0500f8d45711ff82c59fbbce20f721?erid=2W5zFHdZCrU" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Одобрение ИИ</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/boostra.ru" alt="Boostra" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=BO&background=00b09b&color=fff'">
+                <span style="color: #00b09b; font-weight: bold;">Boostra</span>
+            </div>
+            <div class="rating">★★★★☆ 4.6</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>1 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>5 - 16 дней</strong></div>
+            <div class="param">Ставка<strong>Первый займ 0%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/07ce14d9676a46863b0aa877d38db570?erid=2W5zFHzPkun" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Высокое одобрение</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://logo.s3lds.ru/offers/110711/logo/" alt="МикроЗайм" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=MZ&background=2c3e50&color=fff'">
+                <span style="color: #2c3e50; font-weight: bold;">МикроЗайм</span>
+            </div>
+            <div class="rating">★★★★☆ 4.5</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>5 000 - 50 000 ₽</strong></div>
+            <div class="param">Срок<strong>30 - 168 дней</strong></div>
+            <div class="param">Ставка<strong>0% (первые 3 дня)</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/cabcba33ba1d6e61e695698ce0cf91bd?erid=2W5zFJ31Byi" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Без выходных</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://logo.s3lds.ru/offers/11508/logo/" alt="Деньги в долг" style="width: 90px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=DD&background=764ba2&color=fff'">
+                
+            </div>
+            <div class="rating">★★★★☆ 4.4</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>10 000 - 50 000 ₽</strong></div>
+            <div class="param">Срок<strong>15 - 90 дней</strong></div>
+            <div class="param">Ставка<strong>Снижение со 2-го</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/a8fdc09b6e3e96556187709db6b8354c?erid=2W5zFJq5CdE" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Выдача за 30 мин</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/svoi-ludi.ru" alt="Свои люди" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=SL&background=f5576c&color=fff'">
+                <span style="color: #f5576c; font-weight: bold;">Свои люди</span>
+            </div>
+            <div class="rating">★★★★☆ 4.5</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>5 - 30 дней</strong></div>
+            <div class="param">Ставка<strong>0,8% в день</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/2876b005dd9c4e748514c1edce5f683a?erid=2W5zFHDfLCg" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ С 9:00 до 21:00</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/dozarplati.com" alt="До Зарплаты" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=DZ&background=fa709a&color=fff'">
+                <span style="color: #fa709a; font-weight: bold;">До Зарплаты</span>
+            </div>
+            <div class="rating">★★★★★ 4.8</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>1 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>15 - 365 дней</strong></div>
+            <div class="param">Ставка<strong>от 0% до 1% в день</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/59ddfcc0e2c9f344a1894b20f0e32039?erid=2W5zFJq8aRv" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Комфортный платёж</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/smartcash.ru" alt="УмныеНаличные" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=UN&background=2193b0&color=fff'">
+                <span style="color: #2193b0; font-weight: bold;">УмныеНаличные</span>
+            </div>
+            <div class="rating">★★★★☆ 4.5</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>5 - 30 дней</strong></div>
+            <div class="param">Ставка<strong>0,8% в день</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/e1192f63f7a66ca11f31da6558b8d296?erid=2W5zFJSTEz4" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Решение за 15 мин</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/rocketman.ru" alt="RocketMan" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=RM&background=330867&color=fff'">
+                <span style="color: #330867; font-weight: bold;">RocketMan</span>
+            </div>
+            <div class="rating">★★★★☆ 4.4</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>5 - 30 дней</strong></div>
+            <div class="param">Возраст<strong>от 18 до 65 лет</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/d3b1ab3f339d74af99f1d9d1b97b584b?erid=2W5zFJPY1hS" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Мгновенно на карту</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://logo.s3lds.ru/offers/11027/logo/" alt="ЛайкЗайм" style="width: 90px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=LZ&background=ff5e62&color=fff'">
+                
+            </div>
+            <div class="rating">★★★★★ 4.8</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>1 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>5 - 16 дней</strong></div>
+            <div class="param">Ставка<strong>0,8% в день</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/10abd56cce486f40d9398677b9286b69?erid=2W5zFGnBVi8" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Высокое одобрение</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/denginadom.ru" alt="Деньги на дом" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=DN&background=11998e&color=fff'">
+                <span style="color: #11998e; font-weight: bold;">Деньгинадом</span>
+            </div>
+            <div class="rating">★★★★☆ 4.6</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>5 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>до 52 недель</strong></div>
+            <div class="param">Ставка<strong>14 дней без %</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/78a0d016e956630f1a354e4755414341?erid=2W5zFGRNCUp" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Акция для новых</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/max.credit" alt="Max.Credit" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=MC&background=667eea&color=fff'">
+                <span style="color: #667eea; font-weight: bold;">Max.Credit</span>
+            </div>
+            <div class="rating">★★★★☆ 4.3</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>5 - 30 дней</strong></div>
+            <div class="param">Ставка<strong>0,8% в день</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/e2c2f09d9862c562d445da328021fefe?erid=2W5zFHNXCsb" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ За 15 минут</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/prostoyvopros.ru" alt="ПростойВопрос" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=PV&background=b490ca&color=fff'">
+                <span style="color: #b490ca; font-weight: bold;">ПростойВопрос</span>
+            </div>
+            <div class="rating">★★★★☆ 4.5</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>5 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>14 - 364 дня</strong></div>
+            <div class="param">Ставка<strong>0% на 14 дней</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/266002f0cf9abc9580e844ce8c499256?erid=2W5zFJN1aVN" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ До 50 000 ₽ без %</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/bistrodengi.ru" alt="БыстроДеньги" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=BD&background=ff6b6b&color=fff'">
+                <span style="color: #ff6b6b; font-weight: bold;">БыстроДеньги</span>
+            </div>
+            <div class="rating">★★★★☆ 4.6</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>31 день</strong></div>
+            <div class="param">Ставка<strong>0% (первые 10 дн)</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/8c3187c1337470cb61d76fe343baae50?erid=2W5zFHukh7E" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Без залога</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/srochnodengi.ru" alt="Срочноденьги" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=SD&background=f5576c&color=fff'">
+                <span style="color: #f5576c; font-weight: bold;">Срочноденьги</span>
+            </div>
+            <div class="rating">★★★★★ 4.7</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>2 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>1 - 30 дней</strong></div>
+            <div class="param">Ставка<strong>от 0 до 0,8%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/02bd4d4edb6dde3e8880d7b41384f4b2?erid=2W5zFJkUBEY" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Решение за 1 мин</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/belkacredit.ru" alt="Belka Credit" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=BC&background=f39c12&color=fff'">
+                <span style="color: #f39c12; font-weight: bold;">Belka Credit</span>
+            </div>
+            <div class="rating">★★★★☆ 4.5</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>1 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>7 - 30 дней</strong></div>
+            <div class="param">Возраст<strong>от 18 до 75 лет</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/98f7c3c56c6fa5f5e6c918c75222dad1?erid=2W5zFK9wF9A" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Только на карту</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://logo.s3lds.ru/offers/9659/logo/" alt="ДеньгиСразу" style="width: 90px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=DS&background=d35400&color=fff'">
+                
+            </div>
+            <div class="rating">★★★★☆ 4.6</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>1 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>16 - 180 дней</strong></div>
+            <div class="param">Ставка<strong>до 0,8% в день</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/47018998590f717c5ebf83c75e4e4d16?erid=2W5zFGDsBp4" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Зачисление 5 мин</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/migcredit.ru" alt="МигКредит" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=MK&background=8e44ad&color=fff'">
+                <span style="color: #8e44ad; font-weight: bold;">МигКредит</span>
+            </div>
+            <div class="rating">★★★★★ 4.8</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>5 дней - 1 год</strong></div>
+            <div class="param">Ставка<strong>0% до 21 дня</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/02b8a06d6fabb8d92060ce113d3f5ac2?erid=2W5zFJXEz7S" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Первый бесплатно</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/cashpoint-kredit.ru" alt="ЛигаМФО" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=LM&background=2c3e50&color=fff'">
+                <span style="color: #2c3e50; font-weight: bold;">ЛигаМФО</span>
+            </div>
+            <div class="rating">★★★★☆ 4.3</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>30 - 180 дней</strong></div>
+            <div class="param">Ставка<strong>от 0,082%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/756c2ccb2cbb02a04401870a314ba2c6?erid=2W5zFH8vaWL" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Наличными в офисе</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/uabramovicha.ru" alt="У Абрамовича" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=UA&background=16a085&color=fff'">
+                <span style="color: #16a085; font-weight: bold;">У Абрамовича</span>
+            </div>
+            <div class="rating">★★★★☆ 4.5</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>1 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>1 - 365 дней</strong></div>
+            <div class="param">Ставка<strong>Первый займ 0%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/d00dca7faf3cb25fa74b044db9211703?erid=2W5zFHdPDMS" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Любая КИ</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/finmoll.com" alt="ФИНМОЛЛ" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=FM&background=cb2d3e&color=fff'">
+                <span style="color: #cb2d3e; font-weight: bold;">ФИНМОЛЛ</span>
+            </div>
+            <div class="rating">★★★★☆ 4.4</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>35 000 - 100 000 ₽</strong></div>
+            <div class="param">Срок<strong>до 53 недель</strong></div>
+            <div class="param">Ставка<strong>от 178% годовых</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/fa7488101f7500f5e0914d9b2090cee3?erid=2W5zFJg2s8k" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Без залога</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/zaymer.ru" alt="Займер" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=ZR&background=ff6600&color=fff'">
+                <span style="color: #ff6600; font-weight: bold;">ЗАЙМЕР</span>
+            </div>
+            <div class="rating">★★★★★ 4.9</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>2 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>7 - 30 дней</strong></div>
+            <div class="param">Ставка<strong>Первый 0%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://trk.ppdu.ru/click/dmX3fUpx?erid=2SDnje11YaL&siteId=17474" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Возраст от 18 до 75</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/adengi.ru" alt="А Деньги" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=AD&background=e74c3c&color=fff'">
+                <span style="color: #e74c3c; font-weight: bold;">А Деньги</span>
+            </div>
+            <div class="rating">★★★★★ 4.9</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>до 50 000 ₽</strong></div>
+            <div class="param">Срок<strong>до 30 дней</strong></div>
+            <div class="param">Ставка<strong>первые 21 день 0%</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://trk.ppdu.ru/click/DSHZAwQX?erid=LjN8KSUm6" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Кредитный лимит</div>
+        </div>
+    </article>
+
+    <article class="offer-card">
+        <div class="mfo-brand">
+            <div class="mfo-logo">
+                <img src="https://favicon.yandex.net/favicon/ezaem.ru" alt="Ezaem" style="width: 24px; height: 24px; margin-right: 8px;" onerror="this.src='https://ui-avatars.com/api/?name=EZ&background=2980b9&color=fff'">
+                <span style="color: #2980b9; font-weight: bold;">Ezaem</span>
+            </div>
+            <div class="rating">★★★★★ 4.7</div>
+        </div>
+        <div class="mfo-params">
+            <div class="param">Сумма<strong>3 000 - 30 000 ₽</strong></div>
+            <div class="param">Срок<strong>5 - 35 дней</strong></div>
+            <div class="param">Ставка<strong>от 0 % в день</strong></div>
+        </div>
+        <div class="mfo-action">
+            <a href="https://getlink.su/click/dc9f72fe67302e929ba52d94eed0cdf8?erid=2W5zFJSNy8L" class="btn-apply">Получить деньги</a>
+            <div class="probability">✓ Выдача за 5 мин</div>
+        </div>
+    </article>
+
 </main>
 
 <footer>
     <div class="container">
         <p><strong>Информация:</strong> БАНКИГУРУ24 — независимый агрегатор финансовых предложений. Мы помогаем сравнивать условия разных МФО, но сами не являемся кредитной организацией и не выдаем займы.</p>
         <p><strong>Внимание!</strong> Деятельность МФО регулируется Федеральным законом №151-ФЗ. Ставка варьируется от 0% (для новых клиентов) до 0.8% в день. Полная стоимость кредита (ПСК) — от 0% до 292% годовых. Срок займа: от 1 до 365 дней.</p>
-        <p style="margin-top: 25px; opacity: 0.6; font-size: 12px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-		<p style="margin-top: 20px; opacity: 0.8; font-size: 12px;">© 2026 БАНКИГУРУ24 — Все права защищены</p>
+        <p style="margin-top: 20px; opacity: 0.8; font-size: 12px;">© 2026 БАНКИГУРУ24 — Все права защищены</p>
     </div>
 </footer>
-
-<script>
-    // Простая интерактивность для кнопок фильтров
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-</script>
 
 </body>
 </html>
