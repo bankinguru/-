@@ -234,23 +234,28 @@
       if (typeof ym !== 'undefined') {
         clearInterval(timer);
         
-        // 1. Получаем ClientID и обновляем ссылки
         ym(counterId, 'getClientID', function(clientID) {
-          // Находим все кнопки "Оформить"
-          var links = document.querySelectorAll('a[href*="leads.su"], a[href*="smartcash.ru"], a[href*="pxl.leads"]');
+          if (!clientID) return;
+
+          // Ищем ВСЕ кнопки по их классу (это сработает 100%)
+          var links = document.querySelectorAll('a.btn-apply');
           
           links.forEach(function(link) {
             try {
               var url = new URL(link.href);
-              // Записываем ID в aff_sub1 для Leads.su
+              
+              // Добавляем ID в aff_sub1, трекеры getlink и ppdu.ru передадут его в Leads.su
               url.searchParams.set('aff_sub1', clientID);
               link.href = url.toString();
               
-              // 2. Вешаем событие клика для Метрики (доп. страховка)
+              // На всякий случай оставляем отправку цели "Клик"
               link.addEventListener('click', function() {
                 ym(counterId, 'reachGoal', 'lead_click');
               });
-            } catch (e) { console.log(e); }
+            } catch (e) { 
+              // Игнорируем ошибки, если вдруг ссылка пустая
+              console.log('Ошибка обработки ссылки:', e); 
+            }
           });
         });
       }
