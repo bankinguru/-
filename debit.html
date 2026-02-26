@@ -285,57 +285,57 @@
 </footer>
 
 <script>
-  (function() {
-    var counterId = 107028565; // Твой номер счетчика
+(function() {
+    const COUNTER_ID = 107028565; // Твой номер счетчика
+    const GOAL_NAME = 'lead_click'; // Цель "Клик" для Директа
+    const SUB_ID_PARAM = 'aff_sub1'; // Параметр, который ждет Leads.su
 
-    var updateLinks = function() {
-      if (typeof ym === 'undefined') return;
-
-      ym(counterId, 'getClientID', function(clientID) {
-        if (!clientID) return;
-
-        // Выбираем абсолютно все кнопки с твоим классом btn-apply
-        var links = document.querySelectorAll('a.btn-apply');
-        
-        links.forEach(function(link) {
-          var currentHref = link.getAttribute('href');
-          
-          // Пропускаем, если ссылки нет или это просто якорь #
-          if (!currentHref || currentHref === '#' || currentHref.startsWith('javascript:')) return;
-
-          try {
-            var url = new URL(link.href);
-            // Добавляем ID в параметр aff_sub1 (это стандарт для Leads.su)
-            url.searchParams.set('aff_sub1', clientID);
+    function updateLink(link, clientId) {
+        try {
+            const href = link.getAttribute('href');
+            if (!href || href === '#' || href.startsWith('javascript:')) return;
             
-            // Если ссылка уже была изменена, не перезаписываем лишний раз
-            if (link.href !== url.toString()) {
-              link.href = url.toString();
+            let url = new URL(link.href);
+            // Если ID еще не вшит — вшиваем
+            if (url.searchParams.get(SUB_ID_PARAM) !== clientId) {
+                url.searchParams.set(SUB_ID_PARAM, clientId);
+                link.href = url.toString();
             }
-          } catch (e) {
-            console.warn('Не удалось обработать ссылку:', currentHref);
-          }
+        } catch (e) { /* Игнорируем битые ссылки */ }
+    }
+
+    function init() {
+        if (typeof ym === 'undefined') return;
+        
+        ym(COUNTER_ID, 'getClientID', function(clientId) {
+            if (!clientId) return;
+
+            // 1. Сразу обрабатываем все кнопки на странице
+            document.querySelectorAll('a.btn-apply').forEach(link => updateLink(link, clientId));
+
+            // 2. Следим за кликами (на случай динамических кнопок или если ID не успел подставиться)
+            document.addEventListener('mousedown', function(event) {
+                const link = event.target.closest('a.btn-apply');
+                if (link) {
+                    updateLink(link, clientId); // Прошиваем прямо в момент нажатия
+                    ym(COUNTER_ID, 'reachGoal', GOAL_NAME); // Сразу пушим цель в Директ
+                }
+            }, true);
         });
-      });
-    };
+    }
 
-    // Запускаем проверку несколько раз, чтобы точно поймать загрузку Метрики и кнопок
-    var attempts = 0;
-    var timer = setInterval(function() {
-      updateLinks();
-      attempts++;
-      if (attempts > 10) clearInterval(timer); // Стоп через 5 секунд
-    }, 500);
-
-    // Также вешаем событие на клик: если за 5 сек не успело, обновится в момент нажатия
-    document.addEventListener('click', function(e) {
-      if (e.target && e.target.classList.contains('btn-apply')) {
-        updateLinks();
-        // Отправляем цель "Клик" в Метрику для Директа
-        ym(counterId, 'reachGoal', 'lead_click');
-      }
-    });
-  })();
+    // Ждем загрузку Метрики (до 10 секунд)
+    let attempts = 0;
+    const checkYm = setInterval(() => {
+        if (typeof ym !== 'undefined') {
+            clearInterval(checkYm);
+            init();
+        } else if (attempts > 50) {
+            clearInterval(checkYm);
+        }
+        attempts++;
+    }, 200);
+})();
 </script>
     
 </body>
