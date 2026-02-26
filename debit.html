@@ -289,30 +289,32 @@
     var counterId = 107028565; // Твой номер счетчика
 
     var timer = setInterval(function() {
+      // Ждем загрузки Метрики
       if (typeof ym !== 'undefined') {
         clearInterval(timer);
         
         ym(counterId, 'getClientID', function(clientID) {
           if (!clientID) return;
 
-          // Ищем ВСЕ кнопки по их классу (это сработает 100%)
+          // Находим ВСЕ кнопки с классом btn-apply
           var links = document.querySelectorAll('a.btn-apply');
           
           links.forEach(function(link) {
             try {
               var url = new URL(link.href);
               
-              // Добавляем ID в aff_sub1, трекеры getlink и ppdu.ru передадут его в Leads.su
+              // Добавляем ClientID в aff_sub1. 
+              // Твои ссылки (denginadom, max.credit и др.) примут этот параметр 
+              // и передадут его в Leads.su автоматически.
               url.searchParams.set('aff_sub1', clientID);
               link.href = url.toString();
               
-              // На всякий случай оставляем отправку цели "Клик"
+              // Дополнительно вешаем цель на сам клик (как ты и хотел в начале)
               link.addEventListener('click', function() {
                 ym(counterId, 'reachGoal', 'lead_click');
               });
             } catch (e) { 
-              // Игнорируем ошибки, если вдруг ссылка пустая
-              console.log('Ошибка обработки ссылки:', e); 
+              console.log('Пропуск ссылки без href'); 
             }
           });
         });
