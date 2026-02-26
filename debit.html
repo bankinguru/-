@@ -288,38 +288,53 @@
   (function() {
     var counterId = 107028565; // Твой номер счетчика
 
-    var timer = setInterval(function() {
-      // Ждем загрузки Метрики
-      if (typeof ym !== 'undefined') {
-        clearInterval(timer);
-        
-        ym(counterId, 'getClientID', function(clientID) {
-          if (!clientID) return;
+    var updateLinks = function() {
+      if (typeof ym === 'undefined') return;
 
-          // Находим ВСЕ кнопки с классом btn-apply
-          var links = document.querySelectorAll('a.btn-apply');
+      ym(counterId, 'getClientID', function(clientID) {
+        if (!clientID) return;
+
+        // Выбираем абсолютно все кнопки с твоим классом btn-apply
+        var links = document.querySelectorAll('a.btn-apply');
+        
+        links.forEach(function(link) {
+          var currentHref = link.getAttribute('href');
           
-          links.forEach(function(link) {
-            try {
-              var url = new URL(link.href);
-              
-              // Добавляем ClientID в aff_sub1. 
-              // Твои ссылки (denginadom, max.credit и др.) примут этот параметр 
-              // и передадут его в Leads.su автоматически.
-              url.searchParams.set('aff_sub1', clientID);
+          // Пропускаем, если ссылки нет или это просто якорь #
+          if (!currentHref || currentHref === '#' || currentHref.startsWith('javascript:')) return;
+
+          try {
+            var url = new URL(link.href);
+            // Добавляем ID в параметр aff_sub1 (это стандарт для Leads.su)
+            url.searchParams.set('aff_sub1', clientID);
+            
+            // Если ссылка уже была изменена, не перезаписываем лишний раз
+            if (link.href !== url.toString()) {
               link.href = url.toString();
-              
-              // Дополнительно вешаем цель на сам клик (как ты и хотел в начале)
-              link.addEventListener('click', function() {
-                ym(counterId, 'reachGoal', 'lead_click');
-              });
-            } catch (e) { 
-              console.log('Пропуск ссылки без href'); 
             }
-          });
+          } catch (e) {
+            console.warn('Не удалось обработать ссылку:', currentHref);
+          }
         });
-      }
+      });
+    };
+
+    // Запускаем проверку несколько раз, чтобы точно поймать загрузку Метрики и кнопок
+    var attempts = 0;
+    var timer = setInterval(function() {
+      updateLinks();
+      attempts++;
+      if (attempts > 10) clearInterval(timer); // Стоп через 5 секунд
     }, 500);
+
+    // Также вешаем событие на клик: если за 5 сек не успело, обновится в момент нажатия
+    document.addEventListener('click', function(e) {
+      if (e.target && e.target.classList.contains('btn-apply')) {
+        updateLinks();
+        // Отправляем цель "Клик" в Метрику для Директа
+        ym(counterId, 'reachGoal', 'lead_click');
+      }
+    });
   })();
 </script>
     
