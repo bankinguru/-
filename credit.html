@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="icon" type="image/jpeg" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Лучшие кредитные карты 2026 — БАНКИГУРУ24</title>
@@ -74,6 +74,24 @@
             .btn-apply { width: 100%; }
         }
     </style>
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(107028565, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            ecommerce:"dataLayer"
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/107028565" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -112,7 +130,7 @@
             <div class="param">Обслуживание<strong>0 или 590 ₽/год</strong></div>
         </div>
         <div class="mfo-action">
-            <a href="https://getlink.su/click/e953aacaf6022ba707d487f51825c9e1?erid=2W5zFGd7RvG" class="btn-apply" style="background: #ffdd00; color: #000;">Оформить</a>
+            <a href="https://getlink.su/click/e953aacaf6022ba707d487f51825c9e1?erid=2W5zFGd7RvG" class="btn-apply" style="background: #ffdd00; color: #000;" data-offer="tbank-platinum">Оформить</a>
             <div class="probability">✓ Рассрочка до 12 мес.</div>
         </div>
     </article>
@@ -131,7 +149,7 @@
             <div class="param">Обслуживание<strong>0 ₽ всегда</strong></div>
         </div>
         <div class="mfo-action">
-            <a href="https://getlink.su/click/ba4f3d0feb4517962d132777ff0cc8d1?erid=2W5zFG6GEEt" class="btn-apply" style="background: #0a2896;">Оформить</a>
+            <a href="https://getlink.su/click/ba4f3d0feb4517962d132777ff0cc8d1?erid=2W5zFG6GEEt" class="btn-apply" style="background: #0a2896;" data-offer="vtb-credit">Оформить</a>
             <div class="probability">✓ Кешбэк до 15%</div>
         </div>
     </article>
@@ -150,7 +168,7 @@
             <div class="param">Обслуживание<strong>0 ₽ всегда</strong></div>
         </div>
         <div class="mfo-action">
-            <a href="https://getlink.su/click/6d291ac78b1f690862eb7b227d954b74?erid=2W5zFGGtnwi" class="btn-apply" style="background: #ff4b5f;">Оформить</a>
+            <a href="https://getlink.su/click/6d291ac78b1f690862eb7b227d954b74?erid=2W5zFGGtnwi" class="btn-apply" style="background: #ff4b5f;" data-offer="halva">Оформить</a>
             <div class="probability">✓ Кэшбэк до 10%</div>
         </div>
     </article>
@@ -169,7 +187,7 @@
             <div class="param">Обслуживание<strong>0 ₽ навсегда</strong></div>
         </div>
         <div class="mfo-action">
-            <a href="https://getlink.su/click/841cf82af9e63ef7d80ef0c8d4774d22?erid=2W5zFG56ctY" class="btn-apply" style="background: #005a9e;">Оформить</a>
+            <a href="https://getlink.su/click/841cf82af9e63ef7d80ef0c8d4774d22?erid=2W5zFG56ctY" class="btn-apply" style="background: #005a9e;" data-offer="uralsib">Оформить</a>
             <div class="probability">✓ Кешбэк до 3%</div>
         </div>
     </article>
@@ -188,7 +206,7 @@
             <div class="param">Обслуживание<strong>0 ₽ всегда</strong></div>
         </div>
         <div class="mfo-action">
-            <a href="https://getlink.su/click/dd9bb2197ffe6d425fc23cb796f91d0e?erid=2W5zFHxnhJG" class="btn-apply" style="background: #00994a;">Оформить</a>
+            <a href="https://getlink.su/click/dd9bb2197ffe6d425fc23cb796f91d0e?erid=2W5zFHxnhJG" class="btn-apply" style="background: #00994a;" data-offer="akbars">Оформить</a>
             <div class="probability">✓ Кешбэк до 30%</div>
         </div>
     </article>
@@ -227,59 +245,50 @@
 </footer>
 
 <script>
+// Цели Яндекс.Метрики и прошивка ссылок Leads.su
 (function() {
-    const COUNTER_ID = 107028565; // Твой номер счетчика
-    const GOAL_NAME = 'lead_click'; // Цель "Клик" для Директа
-    const SUB_ID_PARAM = 'aff_sub1'; // Параметр, который ждет Leads.su
-
-    function updateLink(link, clientId) {
-        try {
-            const href = link.getAttribute('href');
-            if (!href || href === '#' || href.startsWith('javascript:')) return;
+    var counterId = 107028565;
+    
+    var checkYM = setInterval(function() {
+        if (typeof ym !== 'undefined') {
+            clearInterval(checkYM);
+            initTracking();
+        }
+    }, 300);
+    
+    setTimeout(function() { clearInterval(checkYM); }, 10000);
+    
+    function initTracking() {
+        ym(counterId, 'getClientID', function(clientID) {
+            if (!clientID) return;
+            var offerLinks = document.querySelectorAll('a.btn-apply');
             
-            let url = new URL(link.href);
-            // Если ID еще не вшит — вшиваем
-            if (url.searchParams.get(SUB_ID_PARAM) !== clientId) {
-                url.searchParams.set(SUB_ID_PARAM, clientId);
-                link.href = url.toString();
-            }
-        } catch (e) { /* Игнорируем битые ссылки */ }
-    }
+            offerLinks.forEach(function(link) {
+                var href = link.getAttribute('href');
+                if (!href || href === '#' || href.startsWith('javascript:')) return;
 
-    function init() {
-        if (typeof ym === 'undefined') return;
+                try {
+                    var url = new URL(link.href);
+                    url.searchParams.set('aff_sub1', clientID);
+                    if (link.dataset.offer) {
+                        url.searchParams.set('aff_sub2', link.dataset.offer);
+                    }
+                    link.href = url.toString();
+                } catch (e) { console.log('URL error:', e); }
+            });
+        });
         
-        ym(COUNTER_ID, 'getClientID', function(clientId) {
-            if (!clientId) return;
-
-            // 1. Сразу обрабатываем все кнопки на странице
-            document.querySelectorAll('a.btn-apply').forEach(link => updateLink(link, clientId));
-
-            // 2. Следим за кликами (на случай динамических кнопок или если ID не успел подставиться)
-            document.addEventListener('mousedown', function(event) {
-                const link = event.target.closest('a.btn-apply');
-                if (link) {
-                    updateLink(link, clientId); // Прошиваем прямо в момент нажатия
-                    ym(COUNTER_ID, 'reachGoal', GOAL_NAME); // Сразу пушим цель в Директ
-                }
-            }, true);
+        var allButtons = document.querySelectorAll('a.btn-apply');
+        allButtons.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                var offerName = this.dataset.offer || 'unknown';
+                ym(counterId, 'reachGoal', 'lead_click', {
+                    offer_name: offerName
+                });
+            });
         });
     }
-
-    // Ждем загрузку Метрики (до 10 секунд)
-    let attempts = 0;
-    const checkYm = setInterval(() => {
-        if (typeof ym !== 'undefined') {
-            clearInterval(checkYm);
-            init();
-        } else if (attempts > 50) {
-            clearInterval(checkYm);
-        }
-        attempts++;
-    }, 200);
 })();
 </script>
-
-    
 </body>
 </html>
